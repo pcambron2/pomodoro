@@ -39,6 +39,7 @@ function startTimer() {
         if (timeLeft === undefined) {
             timeLeft = WORK_TIME;
         }
+        document.querySelector('.timer').classList.add('blinking');
         timerId = setInterval(() => {
             timeLeft--;
             updateDisplay();
@@ -46,6 +47,7 @@ function startTimer() {
             if (timeLeft === 0) {
                 clearInterval(timerId);
                 timerId = null;
+                document.querySelector('.timer').classList.remove('blinking');
                 switchMode();
                 startTimer();
             }
@@ -56,6 +58,7 @@ function startTimer() {
 function pauseTimer() {
     clearInterval(timerId);
     timerId = null;
+    document.querySelector('.timer').classList.remove('blinking');
 }
 
 function resetTimer() {
@@ -64,6 +67,7 @@ function resetTimer() {
     isWorkTime = true;
     timeLeft = WORK_TIME;
     modeText.textContent = 'Work Time';
+    document.querySelector('.timer').classList.remove('blinking');
     updateDisplay();
 }
 

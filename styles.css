@@ -206,3 +206,13 @@ input[type="number"] {
     justify-content: center;
     gap: 1rem;
 }
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.timer.blinking {
+    animation: blink 1s ease-in-out infinite;
+}
