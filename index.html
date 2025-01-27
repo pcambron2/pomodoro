@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Focus Timer</h1>
+            <button class="settings-toggle" id="settings-toggle">
+                <span class="material-icons-round">settings</span>
+            </button>
+        </header>
+        
+        <div class="settings" id="settings-panel">
+            <h2>Settings</h2>
+            <div class="setting-group">
+                <label for="workTime">Work Duration</label>
+                <div class="time-input">
+                    <input type="number" id="workTime" min="1" max="60" value="25">
+                    <span class="unit">min</span>
+                </div>
+            </div>
+            <div class="setting-group">
+                <label for="breakTime">Break Duration</label>
+                <div class="time-input">
+                    <input type="number" id="breakTime" min="1" max="60" value="5">
+                    <span class="unit">min</span>
+                </div>
+            </div>
+            <button id="apply-settings" class="btn primary">Save Settings</button>
+        </div>
+
+        <div class="main-timer">
+            <div class="mode-indicator">
+                <span id="mode-text">Focus Time</span>
+            </div>
+            <div class="timer">
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+            
+            <div class="primary-controls">
+                <button id="start" class="btn-circle primary">
+                    <span class="material-icons-round">play_arrow</span>
+                </button>
+                <button id="pause" class="btn-circle primary" style="display: none;">
+                    <span class="material-icons-round">pause</span>
+                </button>
+                <button id="reset" class="btn-circle secondary">
+                    <span class="material-icons-round">refresh</span>
+                </button>
+            </div>
+            
+            <div class="mode-controls">
+                <button id="work-mode" class="btn secondary">Focus Mode</button>
+                <button id="rest-mode" class="btn secondary">Break Mode</button>
+            </div>
+        </div>
+
+        <div class="game-container" id="snake-game" style="display: none;">
+            <h2>Break Time Snake</h2>
+            <canvas id="gameCanvas" width="300" height="300"></canvas>
+            <div class="game-score">Score: <span id="score">0</span></div>
+            <div class="game-controls">
+                <button class="btn secondary" id="startGame">New Game</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
